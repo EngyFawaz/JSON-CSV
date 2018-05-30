@@ -16,8 +16,13 @@ import { BlockedUserComponent } from "./blockeduser/blockeduser.component";
 import { topics } from "./topic/topic.component";
 import { APP_BASE_HREF } from "@angular/common";
 import { FeedbackComponent } from "./feedback/feedback.component";
+import { ConvertComponent } from "./convert/convert.component";
 
 const routes: Routes = [
+  {
+    path: "convert",
+    component : ConvertComponent
+  } , 
   {
     path: "topics",
     component: topics

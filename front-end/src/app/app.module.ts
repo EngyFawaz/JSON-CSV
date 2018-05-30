@@ -17,6 +17,7 @@ import { Home2Component } from "./home2/home2.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { FooterComponent } from "./footer/footer.component";
 import { topics } from "./topic/topic.component";
+import { ConvertComponent } from "./convert/convert.component";
 
 import {
   ProfileComponent,
@@ -76,7 +77,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     FavoriteExpertComponent,
     ViewProfileComponent,
     ScheduleComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ConvertComponent
   ],
   imports: [
     BrowserModule,
