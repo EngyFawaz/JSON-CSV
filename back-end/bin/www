@@ -6,7 +6,7 @@
 
 var app = require('../app'),
   mongoose = require("mongoose"),
-  debug = require('debug')('office-hours:server'),
+  debug = require('debug')('JSON-CSV:server'),
   http = require('http'),
   User = mongoose.model("User");
 
