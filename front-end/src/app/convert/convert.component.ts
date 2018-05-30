@@ -5,7 +5,7 @@ import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-home",
+  selector: "app-convert",
   templateUrl: "./convert.component.html",
   styleUrls: ["./convert.component.scss"]
 })

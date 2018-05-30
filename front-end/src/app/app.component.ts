@@ -10,13 +10,15 @@ import { Router } from "@angular/router";
 })
 export class AppComponent {
   visible = false;
-  chosenExperts: any;
-  registeredUser: any;
-  filter = "admin";
 
   constructor(private router: Router) {
       this.visible = true;
   }
+
+  ngDoCheck() {
+      this.visible = true;
+  }
+
   // Scroll up to the top of the page on changing the route
   onActivate(event) {}
  
