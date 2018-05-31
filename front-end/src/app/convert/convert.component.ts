@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { WindowRef } from "../window.reference";
 import { HostListener } from "@angular/core";
-import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
 
 @Component({

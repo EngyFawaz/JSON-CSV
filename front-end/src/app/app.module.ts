@@ -11,8 +11,6 @@ import { AppComponent } from "./app.component";
 import { FooterComponent } from "./footer/footer.component";
 import { ConvertComponent } from "./convert/convert.component";
 
-import { AuthService } from "./auth.service";
-import { AuthGuard } from "./auth-guard.service";
 import { httpInterceptorProviders } from "./http-interceptors";
 import {
   DlDateTimePickerDateModule,
@@ -40,6 +38,6 @@ import { Ng2SmartTableModule, LocalDataSource } from "ng2-smart-table";
     Ng2SmartTableModule
   ],
   bootstrap: [AppComponent],
-  providers: [httpInterceptorProviders, AuthService, AuthGuard]
+  providers: [httpInterceptorProviders]
 })
 export class AppModule {}

@@ -7,8 +7,7 @@
 var app = require('../app'),
   mongoose = require("mongoose"),
   debug = require('debug')('JSON-CSV:server'),
-  http = require('http'),
-  User = mongoose.model("User");
+  http = require('http');
 
 /**
  * Normalize a port into a number, string, or false.
