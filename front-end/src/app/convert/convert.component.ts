@@ -13,7 +13,6 @@ import { ConvertService } from "./convert.service";
 })
 export class ConvertComponent implements OnInit {
   originalSticky = 0;
-
   constructor(
     private winRef: WindowRef,
     private router: Router,
@@ -29,6 +28,10 @@ export class ConvertComponent implements OnInit {
     )).value).subscribe((res: any) => {
       if (res.hasOwnProperty("data")) {
         console.log(res.data);
+        for (var i = 0; i < res.data.length; i++) {
+          document.getElementById("result").innerHTML += res.data[i];
+          document.getElementById("result").innerHTML += "<br/>";
+      }
         }
     });
   }
