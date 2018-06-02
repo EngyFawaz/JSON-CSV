@@ -12,6 +12,7 @@ var mongoose = require("mongoose"),
                 data: null
             });
         }
+        
         var csv = Papa.unparse(req.body.input).replace(/(\r\n)/gm,";");
         var result = csv.split(";");
         console.log(csv);

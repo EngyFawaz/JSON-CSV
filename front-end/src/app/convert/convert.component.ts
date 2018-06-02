@@ -23,6 +23,7 @@ export class ConvertComponent implements OnInit {
   ngOnInit(){}
 
   converter() {
+    document.getElementById("result").innerHTML = "";
     this.convertService.convert((<HTMLInputElement>document.getElementById(
       "resizer"
     )).value).subscribe((res: any) => {
