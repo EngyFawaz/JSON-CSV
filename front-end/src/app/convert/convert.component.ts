@@ -26,9 +26,10 @@ export class ConvertComponent implements OnInit {
   converter() {
     this.convertService.convert((<HTMLInputElement>document.getElementById(
       "resizer"
-    )).value);
+    )).value).subscribe((res: any) => {
+      if (res.hasOwnProperty("data")) {
+        console.log(res.data);
+        }
+    });
   }
-
-
-  
 }
