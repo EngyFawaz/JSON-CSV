@@ -1,6 +1,4 @@
-# nodejs-seed-project-es5
-
-A starter Node.js backend RESTful API using ES5.
+# JSON-CSV
 
 ## Technology:
 
@@ -14,4 +12,3 @@ A starter Node.js backend RESTful API using ES5.
 2. npm install
 3. npm start
 
-&#9400; Omar Doma 2018

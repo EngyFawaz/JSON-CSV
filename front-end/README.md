@@ -1,6 +1,4 @@
-# angular-seed-project
-A starter Angular 5 frontend template using ng-bootstrap(a native Angular implementation of Bootstrap 4, with no jQuery usage) and Nebular framework. 
-
+# JSON-CSV
 ## Technology:
 
 * [Angular](https://angular.io)
@@ -11,6 +9,5 @@ A starter Angular 5 frontend template using ng-bootstrap(a native Angular implem
 
 1. Clone the repo.
 2. npm install
-3. ng serve
+3. npm start or ng serve
 
-&#9400; Omar Doma 2018
