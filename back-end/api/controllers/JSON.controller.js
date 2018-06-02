@@ -1,6 +1,7 @@
 var mongoose = require("mongoose"),
     Validations = require("../utils/Validations"),
     moment = require("moment");
+    Papa = require("papaparse");
     
 
     module.exports.convertToCSV = function(req, res, next){
@@ -11,11 +12,12 @@ var mongoose = require("mongoose"),
                 data: null
             });
         }
-        else 
+        var csv = Papa.unparse(req.body.input);
+        
+        console.log(csv);
         return res.status(200).json({
-            err: null,
-            msg: "YAAAAYY",
-            data: null
-        });
-
+                err: null,
+                msg: "converted successfully",
+                data: csv
+            });
     };
