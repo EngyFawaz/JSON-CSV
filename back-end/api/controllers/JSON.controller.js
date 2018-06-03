@@ -22,3 +22,14 @@ var mongoose = require("mongoose"),
                 data: result
             });
     };
+
+    module.exports.convertFileToCSV = function(req, res, next){
+        x : FormData;
+        x = req.body.infile.get('file');
+        console.log(x);
+        return res.status(200).json({
+            err: null,
+            msg: "yaaaayy",
+            data: x
+        });
+    };
