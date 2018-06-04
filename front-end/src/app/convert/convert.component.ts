@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { WindowRef } from "../window.reference";
 import { HostListener } from "@angular/core";
 import { Router } from "@angular/router";
@@ -77,7 +77,17 @@ export class ConvertComponent implements OnInit {
           writeData += res.data[i];
           writeData += "\r\n";
       }
-      window.open("data:text/csv;charset=utf-8," + escape(writeData));
+      var file = new Blob([writeData], {type: 'text/csv'});
+      var a = document.createElement("a"),
+             url = URL.createObjectURL(file);
+         a.href = url;
+         a.download = 'download.csv';
+         document.body.appendChild(a);
+         a.click();
+         setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+         }, 0); 
         }
     },
     error => {
