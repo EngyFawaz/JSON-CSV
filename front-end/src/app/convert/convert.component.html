@@ -26,17 +26,20 @@
 <p style="color:white; margin-left: -150px;
 margin-top: -19px;
 position: fixed;
-left: 18.5%;
-top: 45%;
+left: 20%;
+top: 40%;
 font-size: 18px;
 padding-left: 10px;
 padding-right: 10px;" > JSON string must be surrounded by [ ]</p>
-<input type='text' id='resizer' placeholder='ex: [{ "name":"John", "age":30}]'>
+<textarea id="json" class="text">
+[{"Id":1,"UserName":"Sam Smith"},
+{"Id":2,"UserName":"Fred Frankly"},
+{"Id":1,"UserName":"Zachary Zupers"}]</textarea>
 <p style="color:white; margin-left: -150px;
 margin-top: -19px;
 position: fixed;
 left: 10%;
-top: 57%;
+top: 70%;
 font-size: 18px;
 padding-left: 10px;
 padding-right: 10px;" > or upload JSON file to be converted</p>
@@ -44,7 +47,7 @@ padding-right: 10px;" > or upload JSON file to be converted</p>
 margin-top: -19px;
 position: fixed;
 left: 20%;
-top: 61%;
+top: 75%;
 padding-left: 10px;
 padding-right: 10px;
 color:white;" #fileInput>
@@ -52,7 +55,7 @@ color:white;" #fileInput>
 margin-top: -19px;
 position: fixed;
 left: 21%;
-top: 67%;
+top: 80%;
 padding-left: 10px;
 padding-right: 10px;">Convert </button>
 <div class = "adjust" >

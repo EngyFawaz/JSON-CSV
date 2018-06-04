@@ -14,11 +14,4 @@ export class ConvertService {
           );
     }
 
-    fileConvert(infile: FormData){
-        return this.httpClient.post(
-            environment.apiUrl + "convert/convertFileToCSV",
-            {infile}
-          );
-    }
-
 }

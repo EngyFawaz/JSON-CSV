@@ -4,27 +4,24 @@ import { HostListener } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { ConvertService } from "./convert.service";
-//import { PapaParse } from "papaparse";
 
 @Component({
   selector: "app-convert",
   templateUrl: "./convert.component.html",
   styleUrls: ["./convert.component.scss"],
-  // providers: [ConvertService , PapaParse]
   providers: [ConvertService]
 })
 export class ConvertComponent implements OnInit {
   originalSticky = 0;
   JSONfile: File;
   valid: boolean = false;
-  data: Object;
+  fileContent : String ;
 
 
   constructor(
     private winRef: WindowRef,
     private router: Router,
-    private convertService: ConvertService,
-    //private Papa: PapaParse
+    private convertService: ConvertService
   ) {
   }
 
@@ -33,7 +30,7 @@ export class ConvertComponent implements OnInit {
   converter() {
     document.getElementById("result").innerHTML = "";
     this.convertService.convert((<HTMLInputElement>document.getElementById(
-      "resizer"
+      "json"
     )).value).subscribe((res: any) => {
       alert(res.msg);
       if (res.hasOwnProperty("data")) {
@@ -58,24 +55,35 @@ export class ConvertComponent implements OnInit {
       alert("Please enter json file format");
       this.valid = false;
     }
+    var file:File = this.JSONfile; 
+    var myReader:FileReader = new FileReader();
+    var self = this;
+
+    myReader.onloadend = function(e){
+      console.log(myReader.result);
+      self.fileContent = myReader.result;
+    }
+
+    myReader.readAsText(file);
   }
 
   onSubmit(event) {
-    // var formData = new FormData();
-    // formData.append('file', this.JSONfile);
-    // this.convertService 
-    //   .fileConvert(formData)
-    //   .subscribe((res: any) => {
-    //     console.log(res);
-    //   });
-    /////////////////////////////////////////////////////////////////////////////////
-    // this.Papa.unparse(this.JSONfile, {
-    //   header: true,
-    //   dynamicTyping: true,
-    //   complete: function(results) {
-    //     this.data = results;
-    //   }
-    // });
+    var writeData = "";
+    this.convertService.convert(this.fileContent).subscribe((res: any) => {
+      alert(res.msg);
+      if (res.hasOwnProperty("data")) {
+        console.log(res.data);
+        for (var i = 0; i < res.data.length; i++) {
+          writeData += res.data[i];
+          writeData += "\r\n";
+      }
+      window.open("data:text/csv;charset=utf-8," + escape(writeData));
+        }
+    },
+    error => {
+      window.alert(error.error.msg);
+    }
+  );
   }
 }
 
