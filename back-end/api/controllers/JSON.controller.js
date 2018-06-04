@@ -1,5 +1,4 @@
-var mongoose = require("mongoose"),
-    Validations = require("../utils/Validations"),
+var Validations = require("../utils/Validations"),
     moment = require("moment");
     Papa = require("papaparse");
     

@@ -2,12 +2,10 @@
 require("./api/config/DBConnection");
 
 var express = require("express"),
-	MongoClient = require("mongodb").MongoClient,
 	logger = require("morgan"),
 	cors = require("cors"),
 	helmet = require("helmet"),
 	path = require("path"),
-	cloudinary = require('cloudinary'),
 	compression = require("compression"),
 	bodyParser = require("body-parser"),
 	routes = require("./api/routes"),
@@ -15,7 +13,6 @@ var express = require("express"),
 	fs = require("fs"),
 	multer = require("multer"),
 	router = express.Router(),
-	url = "mongodb://localhost:3000/office-hours",
 	app = express();
 
 // Set the secret of the app that will be used in authentication
